@@ -1,0 +1,3 @@
+class FlatOwner < ApplicationRecord
+    
+end
