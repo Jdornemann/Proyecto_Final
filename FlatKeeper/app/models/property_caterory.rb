@@ -1,0 +1,2 @@
+class PropertyCaterory < ApplicationRecord
+end

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status publishing:</strong>
+  <%= @cleaning_request.status_publishing %>
+</p>
+
+<%= link_to 'Edit', edit_cleaning_request_path(@cleaning_request) %> |
+<%= link_to 'Back', cleaning_requests_path %>
