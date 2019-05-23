@@ -1,0 +1,39 @@
+ <%= devise_error_messages! %>
+
+<span class="notice"><%= notice %></span>
+<span class="alert"><%= alert %></span>
+ 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+ <legend>Regístrate</legend>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-lg-2 control-label' %>
+      <div class="col-lg-4">
+      <%= f.email_field :email, class: 'form-control', placeholder: 'tu@correo.com' %>
+      </div>
+  </div>
+
+  <div class="form-group">
+     <%= f.label :password, 'Contraseña', class: 'col-lg-2 control-label' %>
+      <% if @minimum_password_length %>
+        <em>(Al menos <%= @minimum_password_length %> caracteres)</em>
+      <% end %>
+      <div class="col-lg-4">
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Contraseña' %>
+      </div>
+  </div>
+
+   <div class="form-group">
+      <%= f.label :password_confirmation, 'Confirma contraseña', class: 'col-lg-2 control-label' %>
+      <div class="col-lg-4">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Contraseña' %>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= f.submit 'Registrarse', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
+
+<%# <%= render "owners/shared/links" %> 

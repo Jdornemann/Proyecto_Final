@@ -4,14 +4,14 @@ class CreateFlatDetails < ActiveRecord::Migration[5.2]
       t.integer :room_quantity
       t.integer :bed_quantity
       t.integer :bathroom_quantity
-      t.integer :dpto_size
+      t.integer :area_size
       t.string :floor
-      t.string :dpto_number
+      t.string :unit_number
       t.string :address
       t.string :country
       t.string :city
-      t.string :dpto_purpose
-
+      t.string :business_purpose
+      
       t.timestamps
     end
   end

@@ -1,6 +1,6 @@
 class CleaningRequestsController < ApplicationController
   before_action :set_cleaning_request, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_owner! 
   # GET /cleaning_requests
   # GET /cleaning_requests.json
   def index
@@ -14,7 +14,12 @@ class CleaningRequestsController < ApplicationController
 
   # GET /cleaning_requests/new
   def new
+
+    @flat_detail = FlatDetail.pluck(:name_alias, :id)
+
     @cleaning_request = CleaningRequest.new
+
+
   end
 
   # GET /cleaning_requests/1/edit
@@ -50,7 +55,7 @@ class CleaningRequestsController < ApplicationController
       end
     end
   end
-
+  HouseKeeper
   # DELETE /cleaning_requests/1
   # DELETE /cleaning_requests/1.json
   def destroy

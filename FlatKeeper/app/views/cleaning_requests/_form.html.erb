@@ -2,7 +2,6 @@
   <% if cleaning_request.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cleaning_request.errors.count, "error") %> prohibited this cleaning_request from being saved:</h2>
-
       <ul>
       <% cleaning_request.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,6 +14,13 @@
     <%= form.label :status_publishing %>
     <%= form.number_field :status_publishing %>
   </div>
+  <div class="field">
+  <%= form.label :flat_name %>
+   <%=form.select :flat_name, options_for_select(@flat_detail), class:"select" %>
+  </div>
+
+
+
 
   <div class="actions">
     <%= form.submit %>
