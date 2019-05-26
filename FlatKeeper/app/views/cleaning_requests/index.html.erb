@@ -5,7 +5,7 @@
                         <table>
                           <thead>
                             <tr>
-                              <th>Status publishing</th>
+                              <th>Status Cleaning</th>
                               <th colspan="3"></th>
                             </tr>
                           </thead>
@@ -13,7 +13,7 @@
                           <tbody>
                             <% @cleaning_requests.each do |cleaning_request| %>
                               <tr>
-                                <td><%= cleaning_request.status_publishing %></td>
+                                <td><%= cleaning_request.status_cleaning %></td>
                                 <td><%= link_to 'Show', cleaning_request %></td>
                                 <td><%= link_to 'Edit', edit_cleaning_request_path(cleaning_request) %></td>
                                 <td><%= link_to 'Destroy', cleaning_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +24,7 @@
 
                         <br>
 
-                        <%= link_to 'New Cleaning Request', new_cleaning_request_path %>
+<%= link_to 'New Request', new_cleaning_request_path, class:"btn btn-info" %>
+
+
+                    

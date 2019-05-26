@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PropertyCateroryTest < ActiveSupport::TestCase
+class PropertyCategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

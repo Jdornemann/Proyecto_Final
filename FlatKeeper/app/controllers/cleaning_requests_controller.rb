@@ -14,9 +14,9 @@ class CleaningRequestsController < ApplicationController
 
   # GET /cleaning_requests/new
   def new
-
-    @flat_detail = FlatDetail.pluck(:name_alias, :id)
-
+    @owner = Owner.find_by_id(current_owner)
+    @flat_detail = FlatDetail.where(owner: current_owner).pluck(:name_alias, :id)
+    @status_cleaning = StatusCleaning.pluck(:status, :id)
     @cleaning_request = CleaningRequest.new
 
 
@@ -29,6 +29,7 @@ class CleaningRequestsController < ApplicationController
   # POST /cleaning_requests
   # POST /cleaning_requests.json
   def create
+  
     @cleaning_request = CleaningRequest.new(cleaning_request_params)
 
     respond_to do |format|
@@ -55,7 +56,7 @@ class CleaningRequestsController < ApplicationController
       end
     end
   end
-  HouseKeeper
+  
   # DELETE /cleaning_requests/1
   # DELETE /cleaning_requests/1.json
   def destroy
@@ -74,6 +75,6 @@ class CleaningRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_request_params
-      params.require(:cleaning_request).permit(:status_publishing)
+      params.require(:cleaning_request).permit(:flat_detail_id,:status_cleaning_id)
     end
 end

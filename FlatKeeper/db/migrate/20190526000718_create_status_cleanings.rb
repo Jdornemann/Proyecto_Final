@@ -1,0 +1,9 @@
+class CreateStatusCleanings < ActiveRecord::Migration[5.2]
+  def change
+    create_table :status_cleanings do |t|
+      t.string :status
+
+      t.timestamps
+    end
+  end
+end

@@ -1,4 +1,7 @@
-<%= form_with(model: cleaning_request, local: true) do |form| %>
+<div class="container">
+ 
+
+<%= form_with(model: cleaning_request, local: true,class:'form-group') do |form| %>
   <% if cleaning_request.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cleaning_request.errors.count, "error") %> prohibited this cleaning_request from being saved:</h2>
@@ -10,19 +13,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :status_publishing %>
-    <%= form.number_field :status_publishing %>
+   <div class='form-group'>
+    <%= form.label :status_cleaning %>
+     <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
   </div>
-  <div class="field">
-  <%= form.label :flat_name %>
-   <%=form.select :flat_name, options_for_select(@flat_detail), class:"select" %>
+  
+ <div class='form-group'>
+   <%= form.label :flat_detail %>
+   <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
+
+    </select>
   </div>
 
 
+<%= form.submit 'Request Service', :class => 'btn btn-info' %>
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+</div>

@@ -1,5 +1,9 @@
 {
   "name": "FlatKeeper",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-4": "^4.0.0",
+    "datatables.net-bs4": "^1.10.19",
+    "jquery": "^3.4.1"
+  }
 }
