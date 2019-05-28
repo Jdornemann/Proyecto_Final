@@ -16,54 +16,20 @@
   </head>
 
    <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="<%= root_path %>">FlatKeeper - Vacation Rental Cleaning Service</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="">Mis solicitudes <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          
-            <% if !owner_signed_in? %>
-              <li class="nav-item">
-              <%= link_to 'Iniciar sesión', new_owner_session_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-              <%= link_to 'Registrarse',  new_owner_registration_path, class: 'nav-link'%>
-              </li>
-            <% else %>
-            <li class="nav-item">
-              <a class="nav-link"><%= current_owner.email %></a>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Cerrar sesión', destroy_owner_session_path, method: :delete, class: 'nav-link' %>
-            <% end %>
-            </li>
-            
-        </ul>
-      </div>
-    </nav>
+    <%= render 'layouts/navbar' %>
 
-    <% if alert.present? %>
-      <div class="alert alert-warning" role="alert">
-        <%= alert %>
-      </div>
-    <% end %>
+    <div class="alerts">
+      <%= render 'layouts/alerts' %>
+    </div>
 
-    <% if notice.present? %>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
 
-    <div class="main-content">
+     <div class="content">
       <%= yield %>
     </div>
+
+     <%= render 'layouts/footer' %>
+
   </body>
 </html>

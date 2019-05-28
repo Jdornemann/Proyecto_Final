@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_030809) do
+ActiveRecord::Schema.define(version: 2019_05_28_000955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 2019_05_26_030809) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "flat_detail_id"
-    t.bigint "house_keeper_id", null: true
+    t.bigint "house_keeper_id"
     t.bigint "owner_id"
     t.bigint "status_cleaning_id"
+    t.bigint "coordinator_id"
+    t.index ["coordinator_id"], name: "index_cleaning_requests_on_coordinator_id"
     t.index ["flat_detail_id"], name: "index_cleaning_requests_on_flat_detail_id"
     t.index ["house_keeper_id"], name: "index_cleaning_requests_on_house_keeper_id"
     t.index ["owner_id"], name: "index_cleaning_requests_on_owner_id"
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 2019_05_26_030809) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cleaning_requests", "coordinators"
   add_foreign_key "cleaning_requests", "flat_details"
   add_foreign_key "cleaning_requests", "house_keepers"
   add_foreign_key "cleaning_requests", "owners"

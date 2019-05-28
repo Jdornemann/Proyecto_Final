@@ -1,32 +1,39 @@
-<span class="notice"><%= notice %></span>
-<span class="alert"><%= alert %></span>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="row justify-content-center">
+<div class="col-4">
+
+
+<%= form_for(resource, as: resource_name, html: {class: 'form'}, url: session_path(resource_name)) do |f| %>
+ 
  <fieldset>
     <legend>Inicia Sesión</legend>
     <div class="form-group">
-      <%= f.label :email, class: 'col-lg-2 control-label' %>
-      <div class="col-lg-4">
+      <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'tu@correo.com' %>
-      </div>
     </div>
+
     <div class="form-group">
-      <%= f.label :password, class: 'col-lg-2 control-label' %>
-      <div class="col-lg-4">
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
-       <div class="form-group form-check">
-    <label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
-  </div>
-      </div>
+          <%= f.label :password %>
+          <%= f.password_field :password, 
+          autocomplete: "off",
+          class: 'form-control', 
+          placeholder: 'Password' %>
+
+          <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox"> Remember me
+          </label>
+          </div>
     </div>
+
     <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
         <%= f.submit 'Iniciar sesión', class: 'btn btn-primary' %>
-      </div>
     </div>
+    <%= render "owners/shared/links" %>
+
   </fieldset>
 <% end %>
 
-<%= render "owners/shared/links" %>
+
+  </div>
+    </div>

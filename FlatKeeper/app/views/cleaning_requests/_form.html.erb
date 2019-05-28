@@ -1,7 +1,10 @@
-<div class="container">
- 
 
-<%= form_with(model: cleaning_request, local: true,class:'form-group') do |form| %>
+<div class="row justify-content-center">
+<div class="col-4">
+
+<div class="container">
+
+<%= form_with(model: cleaning_request, local: true, html: {class: 'form'},class:'form-group') do |form| %>
   <% if cleaning_request.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cleaning_request.errors.count, "error") %> prohibited this cleaning_request from being saved:</h2>
@@ -12,22 +15,30 @@
       </ul>
     </div>
   <% end %>
+ <h2>New Cleaning Request</h2>
 
-   <div class='form-group'>
-    <%= form.label :status_cleaning %>
-     <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
-  </div>
-  
- <div class='form-group'>
-   <%= form.label :flat_detail %>
+<p> <p>
+
+  <div class='form-group'>
+   <%= form.label :flat_detail, 'Which property' %>
    <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
 
     </select>
   </div>
+   <div class='form-group'>
+    <%= form.label :status_cleaning,'Current Status' %>
+     <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
+  </div>
+  
 
 
-<%= form.submit 'Request Service', :class => 'btn btn-info' %>
+
+<%= form.submit 'Request Service Now', :class => 'btn btn-info' %>
 
 
 <% end %>
+<%= link_to 'Back', cleaning_requests_path %>
+</div>
+
+</div>
 </div>

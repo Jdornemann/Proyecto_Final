@@ -31,8 +31,11 @@ class CleaningRequestsController < ApplicationController
   def create
   
     @cleaning_request = CleaningRequest.new(cleaning_request_params)
+    @cleaning_request.owner = current_owner
 
+    
     respond_to do |format|
+      
       if @cleaning_request.save
         format.html { redirect_to @cleaning_request, notice: 'Cleaning request was successfully created.' }
         format.json { render :show, status: :created, location: @cleaning_request }
