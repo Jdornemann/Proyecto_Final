@@ -1,0 +1,78 @@
+
+<div class="row justify-content-center">
+<div class="col-8">
+
+<div class="container">
+
+<%= form_with(model: flat_detail, local: true, html: {class: 'form'},class:'form-group') do |form| %>
+
+  <% if flat_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flat_detail.errors.count, "error") %> prohibited this flat_detail from being saved:</h2>
+      <ul>
+      <% flat_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <h2>Nueva Propiedad</h2>
+
+  <div class='form-group'>
+   <%= form.label :name_alias, 'Alias Unidad' %>
+  <%= form.text_field :name_alias, id: :name_alias,required: 'true', autofocus: 'true', class: 'form-control'  %>
+  </div>
+
+ <div class='form-group'>
+   <%= form.label :address, 'Dirección' %>
+  <%= form.text_field :address, id: :address,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+   <%= form.label :country, 'País' %>
+  <%= form.text_field :country, id: :country,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+   <div class='form-group'>
+   <%= form.label :city, 'Ciudad' %>
+  <%= form.text_field :city, id: :city,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+ <div class='form-group'>
+   <%= form.label :unit_number, 'N° Unidad' %>
+  <%= form.text_field :unit_number, id: :unit_number,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+   <%= form.label :floor, 'N° Piso' %>
+  <%= form.text_field :floor, id: :floor,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+  
+  <div class='form-group'>
+   <%= form.label :area_size, 'Metros'%><sup>2</sup> <label>Unidad</label>
+  <%= form.text_field :area_size, id: :area_size,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+<div class='form-group'>
+   <%= form.label :room_quantity, 'Cantidad Dormitorios'%>
+  <%= form.text_field :room_quantity, id: :room_quantity,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+ <div class='form-group'>
+   <%= form.label :bed_quantity, 'Cantidad Camas'%>
+  <%= form.text_field :bed_quantity, id: :bed_quantity,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div> 
+     <div class='form-group'>
+   <%= form.label :bathroom_quantity, 'Cantidad Baños' %>
+  <%= form.text_field :bathroom_quantity, id: :bathroom_quantity,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+   <%= form.label :business_purpose, 'Proposito del inmueble' %>
+  <%= form.text_field :business_purpose, id: :business_purpose,required: 'true', autofocus: 'true', class: 'form-control' %>
+  </div>
+ 
+  
+  <%= form.submit 'Todo Listo!', :class => 'btn btn-info' %>
+  <%= button_to 'Back', flat_details_path,:class => 'btn btn-info' %>
+</div>
+
+
+<% end %>
+</div>
+
+</div>
+</div>

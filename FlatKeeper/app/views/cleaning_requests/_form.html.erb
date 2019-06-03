@@ -1,10 +1,11 @@
 
 <div class="row justify-content-center">
-<div class="col-4">
+<div class="col-8">
 
 <div class="container">
 
 <%= form_with(model: cleaning_request, local: true, html: {class: 'form'},class:'form-group') do |form| %>
+
   <% if cleaning_request.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cleaning_request.errors.count, "error") %> prohibited this cleaning_request from being saved:</h2>
@@ -15,9 +16,11 @@
       </ul>
     </div>
   <% end %>
- <h2>New Cleaning Request</h2>
+  <h1>Comencemos!</h1>
+  <br>
+ <h2>Solicita un Kepper</h2>
 
-<p> <p>
+
 
   <div class='form-group'>
    <%= form.label :flat_detail, 'Which property' %>
@@ -29,15 +32,48 @@
     <%= form.label :status_cleaning,'Current Status' %>
      <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
   </div>
+
+<h2>Información adicional del huesped</h2>
+<div class="form-group">
+    <label for="formGroupExampleInput">Nombre</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de huesped">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Teléfono</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Teléfono del contacto">
+  </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Check in</label>
+        <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" placeholder="02/06/2019 14:00"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
   
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
+
+      
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comentarios</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <%= form.submit 'Request Service Now', :class => 'btn btn-info' %>
+  <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-info' %>
+</div>
 
 
 
-<%= form.submit 'Request Service Now', :class => 'btn btn-info' %>
 
 
 <% end %>
-<%= link_to 'Back', cleaning_requests_path %>
+
 </div>
 
 </div>

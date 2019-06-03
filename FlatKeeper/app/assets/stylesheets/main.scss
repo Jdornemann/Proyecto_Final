@@ -2,3 +2,11 @@
     margin-top: 2rem;
   }
   
+  // body {
+  //   background-image: url(../FlatKeeper/app/assets/images/background/Real-Estate.jpg);
+  //   background-color: #b61515;
+  //  }
+
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color:lightseagreen;
+  }

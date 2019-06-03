@@ -1,33 +1,45 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="<%= root_path %>">FlatKeeper - Vacation Rental Cleaning Service</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+    <a class="navbar-brand" href="<%= root_path %>">FlatKeeper - Vacation Rental Cleaning Service</a>
+ 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="">Mis solicitudes <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          
-            <% if !owner_signed_in? %>
-              <li class="nav-item">
-              <%= link_to 'Iniciar sesión', new_owner_session_path, class: 'nav-link' %>
-              </li>
-              <li class="nav-item">
-              <%= link_to 'Registrarse',  new_owner_registration_path, class: 'nav-link'%>
-              </li>
-            <% else %>
-            <li class="nav-item">
-              <a class="nav-link"><%= current_owner.email %></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= cleaning_requests_path%>">Mis solicitudes <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <%= link_to 'Cerrar sesión', destroy_owner_session_path, method: :delete, class: 'nav-link' %>
-            <% end %>
+              <a class="nav-link" href="<%= flat_details_path%>">Tus propiedades  </a>
             </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                <% if owner_signed_in?%>
+                    Bienvenido <%= current_owner.email  %>
+                <% else %>
+                  Ingreso
+                <% end %>
+                <span class="caret"></span></a>
+               
+              
+               <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                  <% if owner_signed_in? %>
+                    <a class="dropdown-item" href=""><%= link_to "Salir",destroy_owner_session_path, method: :delete %></a>
+                  <% else %>
+                    <a class="dropdown-item" href=""><%= link_to "Iniciar sesión", new_owner_session_path %></a>
+                        <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href=""><%= link_to "Registrar", new_owner_registration_path %></a>
+                  <% end %>
+              </div>
+                 
+             </li>
+          </ul>
             
-        </ul>
       </div>
+
     </nav>
+
+ 

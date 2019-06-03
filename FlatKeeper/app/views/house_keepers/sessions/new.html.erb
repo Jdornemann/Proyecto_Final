@@ -4,7 +4,7 @@
 
 
 <%= form_for(resource, as: resource_name, html: {class: 'form'}, url: session_path(resource_name)) do |f| %>
-  <legend>Welcome LandLord!</legend>
+ <legend>Welcome keeper!</legend>
  <hr>
  <fieldset>
     <legend>Inicia Sesión</legend>
@@ -30,7 +30,8 @@
     <div class="form-group">
         <%= f.submit 'Iniciar sesión', class: 'btn btn-primary' %>
     </div>
-    <%= render "owners/shared/links" %>
+  <%= render "house_keepers/shared/links" %>
+
 
   </fieldset>
 <% end %>
@@ -38,3 +39,4 @@
 
   </div>
     </div>
+

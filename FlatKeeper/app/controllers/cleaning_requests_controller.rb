@@ -1,10 +1,13 @@
 class CleaningRequestsController < ApplicationController
   before_action :set_cleaning_request, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_house_keeper! 
   before_action :authenticate_owner! 
   # GET /cleaning_requests
   # GET /cleaning_requests.json
   def index
     @cleaning_requests = CleaningRequest.all
+   
+   
   end
 
   # GET /cleaning_requests/1
@@ -18,8 +21,7 @@ class CleaningRequestsController < ApplicationController
     @flat_detail = FlatDetail.where(owner: current_owner).pluck(:name_alias, :id)
     @status_cleaning = StatusCleaning.pluck(:status, :id)
     @cleaning_request = CleaningRequest.new
-
-
+   
   end
 
   # GET /cleaning_requests/1/edit
@@ -50,6 +52,8 @@ class CleaningRequestsController < ApplicationController
   # PATCH/PUT /cleaning_requests/1.json
   def update
     respond_to do |format|
+      #b.update!(house_keeper_id: 1) to asign the keeper to the request
+      #b.update!(coordinator_id: 1)
       if @cleaning_request.update(cleaning_request_params)
         format.html { redirect_to @cleaning_request, notice: 'Cleaning request was successfully updated.' }
         format.json { render :show, status: :ok, location: @cleaning_request }
@@ -74,6 +78,9 @@ class CleaningRequestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cleaning_request
       @cleaning_request = CleaningRequest.find(params[:id])
+      # @status_cleaning =  CleaningRequest.find(params[:id]).status_cleaning.status
+    
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

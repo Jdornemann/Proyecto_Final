@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery
-//= require bootstrap/dist/js/bootstrap
+//= require bootstrap/dist/js/bootstrap.min
 //= require datatables.net/js/jquery.dataTables
 //= require datatables.net-bs4/js/dataTables.bootstrap4
+//= require moment/min/moment.min
+//= require bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
