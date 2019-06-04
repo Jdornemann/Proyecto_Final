@@ -16,7 +16,7 @@ class FlatDetailsController < ApplicationController
     # @flat_detail = FlatDetail.where(owner: current_owner).pluck(:name_alias, :id)
     # @status_cleaning = StatusCleaning.pluck(:status, :id)
     @flat_detail = FlatDetail.new
-
+  
   end
 
   # GET /flat_details/1/edit
@@ -70,7 +70,7 @@ class FlatDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def set_flat_detail_params
-      params.require(:flat_detail).permit(:flat_detail_id,:status_cleaning_id)
+      params.require(:flat_detail).permit(:flat_detail_id,:status_cleaning_id,:name_alias,:address,:city,:country,:floor,:area_size,:room_quantity,:bed_quantity,:bathroom_quantity,:business_purpose)
     end
 
 end

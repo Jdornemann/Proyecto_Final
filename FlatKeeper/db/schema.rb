@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_000955) do
+ActiveRecord::Schema.define(version: 2019_06_04_002628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_000955) do
     t.bigint "owner_id"
     t.bigint "status_cleaning_id"
     t.bigint "coordinator_id"
+    t.string "guest_name"
+    t.integer "guest_phone"
+    t.datetime "guest_checkin"
+    t.string "guest_comment"
     t.index ["coordinator_id"], name: "index_cleaning_requests_on_coordinator_id"
     t.index ["flat_detail_id"], name: "index_cleaning_requests_on_flat_detail_id"
     t.index ["house_keeper_id"], name: "index_cleaning_requests_on_house_keeper_id"

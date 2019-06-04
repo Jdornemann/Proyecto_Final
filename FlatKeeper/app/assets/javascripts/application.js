@@ -15,6 +15,7 @@
 //= require datatables.net/js/jquery.dataTables
 //= require datatables.net-bs4/js/dataTables.bootstrap4
 //= require moment/min/moment.min
+//= require tempusdominus-bootstrap-4.js
 //= require bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min
 //= require rails-ujs
 //= require activestorage

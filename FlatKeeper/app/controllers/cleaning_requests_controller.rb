@@ -85,6 +85,6 @@ class CleaningRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_request_params
-      params.require(:cleaning_request).permit(:flat_detail_id,:status_cleaning_id)
+      params.require(:cleaning_request).permit(:flat_detail_id,:status_cleaning_id,:guest_name,:guest_phone,:guest_checkin,:guest_comment)
     end
 end
