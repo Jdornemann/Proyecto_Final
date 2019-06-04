@@ -23,49 +23,48 @@
 
 
   <div class='form-group'>
-   <%= form.label :flat_detail, 'Which property' %>
+   <%= form.label :flat_detail, '¿Cúal Propiedad?' %> <!--Which property -->
    <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
 
     </select>
   </div>
    <div class='form-group'>
-    <%= form.label :status_cleaning,'Current Status' %>
+    <%= form.label :status_cleaning,'Estado actual de tu Propiedad' %> <!--Current Status-->
      <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
   </div>
 
 <h2>Información adicional del huesped</h2>
 <div class="form-group">
-    <label for="formGroupExampleInput">Nombre</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de huesped">
+      <%= form.label :guest_name,'Nombre' %>
+      <%= form.text_field :guest_name, id: :guest_name,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Nombre de huesped'  %>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput">Teléfono</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Teléfono del contacto">
+     <%= form.label :guest_phone,'Teléfono' %>
+     <%= form.text_field :guest_phone, id: :guest_phone,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Teléfono del contacto'  %>
   </div>
 
-    <div class="form-group">
-        <label for="formGroupExampleInput">Check in</label>
-        <div class='input-group date' id='datetimepicker1'>
-            <input type='text' class="form-control" placeholder="02/06/2019 14:00"/>
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
-    </div>
+  <div class="form-group">
+      <%= form.label :guest_checkin,'Check in' %>
+      <%= form.text_field :guest_checkin, id: :guest_checkin,required: 'true', autofocus: 'true', class: 'form-control',placeholder: '02/06/2019 14:00'  %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+  </div>
   
-<script type="text/javascript">
-  $(function() {
-    $('#datetimepicker1').datetimepicker();
-  });
-</script>
+  <script type="text/javascript">
+    $(function() {
+      $('#guest_checkin').datetimepicker();
+    });
+  </script>
 
-      
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Comentarios</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <div class="form-group">
+      <%= form.label :guest_comment,'Comentarios' %>
+      <%= form.text_area :guest_comment, id: :guest_comment,rows: '3', class: 'form-control',placeholder: 'Las llaves las dejaré en recepción'   %>
   </div>
+
   <%= form.submit 'Request Service Now', :class => 'btn btn-info' %>
   <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-info' %>
+
 </div>
 
 
