@@ -29,7 +29,18 @@
 
     <div class="form-group">
         <%= f.submit 'Iniciar sesión', class: 'btn btn-primary' %>
+         <div class="btn-group">
+		<a class='btn btn-primary disabled'><i class="fa fa-facebook" style="width:16px; height:20px"></i></a>
+		<i class='btn btn-primary ' href='<%= owner_facebook_omniauth_authorize_path %>' style="width:12em"> Sign in with Facebook</i>
+	 </div>	
     </div>
+
+    
+  
+   
+  
+  <%# <button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Connect with Facebook</button> %>
+   <br>
     <%= render "owners/shared/links" %>
 
   </fieldset>

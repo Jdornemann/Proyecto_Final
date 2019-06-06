@@ -65,6 +65,18 @@
           </div>
         </div>
         <div class='row'>
+         <div class='form-group col-6'>
+            <%= form.label :property_type_id, 'Tipo Propiedad' %>
+            <%=form.select :property_type_id, options_for_select(@property_type) , {:selected => flat_detail.property_type_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </div>
+          <div class='form-group col-6'>
+            <%= form.label :property_category_id, 'Categoria Propiedad' %>
+            <%=form.select :property_category_id, options_for_select( @property_category ) , {:selected => flat_detail.property_category_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </div>
+           <div class='form-group col-6'>
+            <%= form.label :property_clase_type_id, 'Clase Propiedad' %>
+            <%=form.select :property_clase_type_id, options_for_select(@property_class) , {:selected => flat_detail.property_clase_type_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </div>
           <div class='form-group col-6'>
             <%= form.label :business_purpose, 'Proposito del inmueble' %>
             <%=form.select :business_purpose, options_for_select([ "Arriendo-Diario", ["Arriendo-Mensual",{class: 'bold'}] ], "Arriendo-Diario") , {:selected => flat_detail.business_purpose},{required: 'true', autofocus: 'true', class: 'form-control'} %>

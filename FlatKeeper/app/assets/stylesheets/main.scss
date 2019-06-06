@@ -1,13 +1,19 @@
 .content{
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-bottom: 300px;
   }
   
   // body {
   //   background-image: url(../FlatKeeper/app/assets/images/background/Real-Estate.jpg);
   //   background-color: #b61515;
   //  }
-
+  .button_with_image_save {
+    background: image-url("facebook_login.png")  60px 30px;
+    text-indent:30px;
+    display:block;
+    cursor: pointer;
+}
   .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color:lightseagreen;
   }

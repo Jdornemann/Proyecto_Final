@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # get 'flat_details/edit'
   # get 'flat_details/new'
   devise_for :owners,
-  controllers: { registrations: "owners/registrations", sessions: 'owners/sessions',passwords: 'owners/passwords' }
+  controllers: { registrations: "owners/registrations",sessions: 'owners/sessions',passwords: 'owners/passwords',:omniauth_callbacks => "owners/omniauth_callbacks" }
+
   resources :cleaning_requests
   resources :flat_details
 
