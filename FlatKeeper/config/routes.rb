@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  
   
+  get 'full_calendars/calendar'
   # get 'flat_details/index'
   # get 'flat_details/show'
   # get 'flat_details/edit'

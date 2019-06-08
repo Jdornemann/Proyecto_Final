@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require datatables.net-bs4/css/dataTables.bootstrap4
+ *= require fullcalendar/dist/fullcalendar
  *= require main
  *= require_tree .
  *= require_self

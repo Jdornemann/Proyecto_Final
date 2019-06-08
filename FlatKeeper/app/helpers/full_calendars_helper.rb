@@ -1,0 +1,2 @@
+module FullCalendarsHelper
+end

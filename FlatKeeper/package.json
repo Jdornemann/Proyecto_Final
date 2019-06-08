@@ -6,6 +6,7 @@
     "bootstrap-datetimepicker-4.17.37": "^4.17.37",
     "datatables.net-bs4": "^1.10.19",
     "font-awesome": "^4.7.0",
+    "fullcalendar": "^3.10.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "popper.js": "^1.15.0"

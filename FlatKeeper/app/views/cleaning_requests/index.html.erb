@@ -1,46 +1,34 @@
-	<div class="container">
-	<p id="notice"><%= notice %></p>
-
-                        <h1>Tus Solicitudes</h1>
-
-                          <table id='MisPropiedades' class="table table-striped table-hover">
-                         <thead class="thead-dark">
-                            <tr>
-                              <th>Status Cleaning</th>
-                              <th>Property</th>
-                              <th>Keeper asignado</th>
-                              <th>Coordinador Responsable</th>
-                              <th>Solicitado el</th>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <% @cleaning_requests.each do |cleaning_request| %>
-                              <tr>
-                                <td><%= cleaning_request.status_cleaning.status%> </td>
-                                <td><%= cleaning_request.flat_detail.name_alias %></td>
-                                <td><%= cleaning_request.house_keeper.try(:email) %></td>
-                                <td><%= cleaning_request.coordinator.try(:email) %></td>
-                                
-                                <td><%= cleaning_request.created_at %></td>
-                                <td><%= link_to 'Show', cleaning_request %></td>
-                                <td><%= link_to 'Edit', edit_cleaning_request_path(cleaning_request) %></td>
-                                <td><%= link_to 'Destroy', cleaning_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                              </tr>
-                            <% end %>
-                          </tbody>
-                        </table>
-
-                        <br>
-
-<%= link_to 'Solicitar Keeper', new_cleaning_request_path, class:"btn btn-primary" %>
-
-
-     </div>               
-<script>
-$('#MisPropiedades').DataTable();
-
-</script>
+	
+<div class="container">
+  <h1>Tus Solicitudes</h1>
+  <table id='MisPropiedades' class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Status Cleaning</th>
+        <th>Property</th>
+        <th>Keeper asignado</th>
+        <th>Coordinador Responsable</th>
+        <th>Solicitado el</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cleaning_requests.each do |cleaning_request| %>
+        <tr>
+          <td><%= cleaning_request.status_cleaning.status%> </td>
+          <td><%= cleaning_request.flat_detail.name_alias %></td>
+          <td><%= cleaning_request.house_keeper.try(:email) %></td>
+          <td><%= cleaning_request.coordinator.try(:email) %></td>
+          <td><%= cleaning_request.created_at %></td>
+          <td><%= link_to 'Show', cleaning_request %></td>
+          <td><%= link_to 'Edit', edit_cleaning_request_path(cleaning_request) %></td>
+          <td><%= link_to 'Destroy', cleaning_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'Solicitar Keeper', new_cleaning_request_path, class:"btn btn-primary"%>
+</div>
