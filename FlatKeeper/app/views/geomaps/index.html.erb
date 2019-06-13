@@ -1,0 +1,31 @@
+ <div class="row justify-content-center">
+  <div class="col-8">
+ <div class="container background-form" align="center">
+  <h1>Ubicaciones de tus propiedades</h1>
+  <p>Verifica la correcta ubicación de propiedades</p>
+  <div class="row">
+    <div class="col-md-6 col-sm-10">
+      <div style='width: 40vh;'>
+        <div id="map" style='width: 800px; height: 400px;'></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({
+  provider: {
+  center: new google.maps.LatLng({lat: -33.4372, lng: -70.6506}),
+  zoom: 7
+  },
+  internal: {
+  id: 'map'
+  }
+  },
+  function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  }
+  );
+</script>

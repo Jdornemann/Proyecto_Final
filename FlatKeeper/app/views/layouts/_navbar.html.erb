@@ -1,48 +1,53 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  
-    <a class="navbar-brand" href="<%= root_path %>">FlatKeeper <small>Vacation Rental Cleaning Service</small> </a>
- 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<div class="row"> 
+    <div class="nav-config col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-config">
+        <a class="navbar-brand" href="<%= root_path %>">FlatKeeper <small>Vacation Rental Cleaning Service</small> </a>
+    
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="<%= cleaning_requests_path%>">Mis solicitudes <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<%= flat_details_path%>">Tus propiedades  </a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="<%= full_calendars_calendar_path%>">Calendario completo </a>
-            </li>
-               <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="<%= cleaning_requests_path%>">Tus solicitudes <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<%= flat_details_path%>">Tus propiedades  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<%= full_calendars_path%>">Calendario completo </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<%= geomaps_path %>">Ubicaciónes </a>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                    <% if owner_signed_in?%>
+                        Bienvenido <%= current_owner.name  %>
+                    <% else %>
+                      Ingreso
+                    <% end %>
+                    <span class="caret"></span></a>
+                  
+                  
+                  <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                      <% if owner_signed_in? %>
+                        <a class="dropdown-item" href=""><%= link_to "Salir",destroy_owner_session_path, method: :delete %></a>
+                      <% else %>
+                        <a class="dropdown-item" href=""><%= link_to "Iniciar sesión", new_owner_session_path %></a>
+                            <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href=""><%= link_to "Registrar", new_owner_registration_path %></a>
+                      <% end %>
+                  </div>
+                    
+                </li>
+              </ul>
                 
-                <% if owner_signed_in?%>
-                    Bienvenido <%= current_owner.name  %>
-                <% else %>
-                  Ingreso
-                <% end %>
-                <span class="caret"></span></a>
-               
-              
-               <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
-                  <% if owner_signed_in? %>
-                    <a class="dropdown-item" href=""><%= link_to "Salir",destroy_owner_session_path, method: :delete %></a>
-                  <% else %>
-                    <a class="dropdown-item" href=""><%= link_to "Iniciar sesión", new_owner_session_path %></a>
-                        <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href=""><%= link_to "Registrar", new_owner_registration_path %></a>
-                  <% end %>
-              </div>
-                 
-             </li>
-          </ul>
-            
-      </div>
+          </div>
 
-    </nav>
-
+        </nav>
+    </div>
  
+ </div>

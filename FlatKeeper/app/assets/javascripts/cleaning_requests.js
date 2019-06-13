@@ -7,4 +7,7 @@ document.addEventListener('turbolinks:before-cache', function(){
 document.addEventListener('turbolinks:load', function(){
 
     $('#MisPropiedades').DataTable();
+
+
+   
 })

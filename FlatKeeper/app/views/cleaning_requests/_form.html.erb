@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   <div class="col-8">
-    <div class="container">
+    <div class="container background-form">
       <%= form_with(model: cleaning_request, local: true, html: {class: 'form'},class:'form-group') do |form| %>
         <% if cleaning_request.errors.any? %>
           <div id="error_explanation">
@@ -36,7 +36,7 @@
       <div class='row'>
         <div class="form-group col-4">
          <%= form.label :guest_checkin,'Check in' %>
-          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+          <div class="input-group date" id="datetimepicker1" data-target-input="nearest" data-date-format="DD/MM/YYYY hh:mm A">
            
             <%= form.text_field :guest_checkin, id: :guest_checkin,required: 'true', autofocus: 'true', class: 'form-control datetimepicker-input'  %>
             <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
@@ -47,7 +47,7 @@
       </div>
       <script type="text/javascript">
         $(function() {
-          $('#guest_checkin').datetimepicker();
+          $('#guest_checkin').datetimepicker({ format: 'DD/MM/YYYY hh:mm A' } );
         });
       </script>
       <div class="form-group">

@@ -18,6 +18,8 @@
 //= require fullcalendar/dist/fullcalendar
 //= require tempusdominus-bootstrap-4.js
 //= require bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min
+//= require underscore/underscore
+//= require gmaps/google
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

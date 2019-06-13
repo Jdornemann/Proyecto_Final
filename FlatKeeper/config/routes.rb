@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
  
   
-  get 'full_calendars/calendar'
+
+  resources 'geomaps'
+  resources 'full_calendars'
   # get 'flat_details/index'
   # get 'flat_details/show'
   # get 'flat_details/edit'

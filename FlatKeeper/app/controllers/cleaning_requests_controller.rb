@@ -39,7 +39,7 @@ class CleaningRequestsController < ApplicationController
     respond_to do |format|
       
       if @cleaning_request.save
-        format.html { redirect_to @cleaning_request, notice: 'Cleaning request was successfully created.' }
+        format.html { redirect_to full_calendars_path, notice: 'Cleaning request was successfully created.' }
         format.json { render :show, status: :created, location: @cleaning_request }
       else
         format.html { render :new }

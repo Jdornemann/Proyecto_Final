@@ -1,17 +1,44 @@
+
+
+
+
+.nav-config {
+
+  z-index: 10;
+  margin: 0 auto; width: 100%;
+  position: fixed;
+
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 2vh;
+/*  height: 17vh; */
+}
+
+
+ 
 .content {
     margin-top: 2rem;
     margin-bottom: 2rem;
     
-  height: 180vh;
+    
     position: relative;
    
     overflow: hidden;
   
   }
 
+  .background-form{
+
+    background-color: white;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
   #calendar{
 
-    background-color: whitesmoke;
+    background-color: white;
 
   }
   .content:before 
@@ -41,15 +68,16 @@
   //   background-image: url(../FlatKeeper/app/assets/images/background/Real-Estate.jpg);
   //   background-color: #b61515;
   //  }
- 
+ h1 p{
+  font-family: 'Varela Round', sans-serif !important;
+
+ }
    
   .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color:lightseagreen;
   }
 
-  .btn {
-  color: white !important;
-  }
+  
   .navbar-brand small {
     display:block;
     font-size:14px;
@@ -62,16 +90,4 @@
   }
   .navbar-toggle {top:10px}
   
-  @media (min-width:768px) {
   
-    .navbar-brand {
-      padding-top:20px;
-      font-family: 'Montserrat', sans-serif;
-    }
-  
-    .nav.navbar-nav a {
-      padding-top:30px;
-      padding-bottom:30px;
-    }
-  
-  }
