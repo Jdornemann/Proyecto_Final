@@ -1,6 +1,7 @@
+<div class="container background-form">
  <div class="row justify-content-center">
-  <div class="col-8">
- <div class="container background-form" align="center">
+ <div class="col-sm-12 col-md-12">
+
       <h2>Nueva Propiedad</h2>
       <%= form_with(model: flat_detail, local: true, html: {class: 'form'},class:'form-group') do |form| %>
         <% if flat_detail.errors.any? %>
@@ -16,76 +17,87 @@
       
         <br>
         <div class='row'>
-          <div class='form-group col-6'>
+         <div class=' col-sm-12'>
+       
+          <div class='form-group '>
             <%= form.label :name_alias, 'Alias Unidad' %>
             <%= form.text_field :name_alias, id: :name_alias,required: 'true', autofocus: 'true', class: 'form-control',placeholder:'Ej. Dpto V Región - Montes de AltaMar...'  %>
           </div>
+           </div>
         </div>
         <hr>
         <div class='row'>
-          <div class='form-group col'>
+         <div class=' col-sm-12'>
+          <div class='form-group'>
             <%= form.label :address, 'Dirección' %>
             <%= form.text_field :address, id: :address,required: 'true', autofocus: 'true', class: 'form-control', placeholder: 'Costas de Montemar 1840' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :city, 'Ciudad' %>
             <%= form.text_field :city, id: :city,required: 'true', autofocus: 'true', class: 'form-control', placeholder:'Viña del Mar' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :country, 'País' %>
             <%= form.text_field :country, id: :country,required: 'true', autofocus: 'true', class: 'form-control', placeholder: 'Chile' %>
           </div>
+            </div>
         </div>
         <hr>
         <div class='row'>
-          <div class='form-group col'>
+         <div class=' col-sm-12'>
+          <div class='form-group '>
             <%= form.label :unit_number, 'N° Unidad' %>
             <%= form.text_field :unit_number, id: :unit_number,required: 'true', autofocus: 'true', class: 'form-control',placeholder: '7546' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :floor, 'N° Piso' %>
             <%= form.text_field :floor, id: :floor,required: 'true', autofocus: 'true', class: 'form-control',placeholder: '7' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :area_size, 'Metros'%><sup>2</sup> <label>Unidad</label>
             <%= form.text_field :area_size, id: :area_size,required: 'true', autofocus: 'true', class: 'form-control',placeholder:'70' %>
           </div>
+           </div>
         </div>
         <div class='row'>
-          <div class='form-group col' >
+         <div class=' col-sm-12'>
+          <div class='form-group ' >
             <%= form.label :room_quantity, 'Cantidad Dormitorios'%>
             <%= form.text_field :room_quantity, id: :room_quantity,required: 'true', autofocus: 'true', class: 'form-control',placeholder:'2' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :bed_quantity, 'Cantidad Camas'%>
             <%= form.text_field :bed_quantity, id: :bed_quantity,required: 'true', autofocus: 'true', class: 'form-control',placeholder: '3' %>
           </div>
-          <div class='form-group col'>
+          <div class='form-group '>
             <%= form.label :bathroom_quantity, 'Cantidad Baños' %>
             <%= form.text_field :bathroom_quantity, id: :bathroom_quantity,required: 'true', autofocus: 'true', class: 'form-control',placeholder:'2' %>
           </div>
         </div>
+          </div>
         <div class='row'>
-         <div class='form-group col-6'>
+        <div class=' col-sm-12'>
+         <div class='form-group '>
             <%= form.label :property_type_id, 'Tipo Propiedad' %>
             <%=form.select :property_type_id, options_for_select(@property_type) , {:selected => flat_detail.property_type_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
           </div>
-          <div class='form-group col-6'>
+          <div class='form-group '>
             <%= form.label :property_category_id, 'Categoria Propiedad' %>
             <%=form.select :property_category_id, options_for_select( @property_category ) , {:selected => flat_detail.property_category_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
           </div>
-           <div class='form-group col-6'>
+           <div class='form-group '>
             <%= form.label :property_clase_type_id, 'Clase Propiedad' %>
             <%=form.select :property_clase_type_id, options_for_select(@property_class) , {:selected => flat_detail.property_clase_type_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
           </div>
-          <div class='form-group col-6'>
+          <div class='form-group '>
             <%= form.label :business_purpose, 'Proposito del inmueble' %>
             <%=form.select :business_purpose, options_for_select([ "Arriendo-Diario", ["Arriendo-Mensual",{class: 'bold'}] ], "Arriendo-Diario") , {:selected => flat_detail.business_purpose},{required: 'true', autofocus: 'true', class: 'form-control'} %>
           </div>
         </div>
-        <%= form.submit 'Todo Listo!', :class => 'btn btn-primary' %>
+        </div>
+        <%= form.submit 'Todo Listo!', :class => 'btn btn-outline-primary btn-lg btn-block' %>
      
-         <%= link_to 'Back', flat_details_path,:class => 'btn btn-primary' %>
+         <%= link_to 'Back', flat_details_path,:class => 'btn btn-outline-primary btn-lg btn-block' %>
       </div>
     <% end %>
 

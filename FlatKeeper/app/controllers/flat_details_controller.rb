@@ -35,7 +35,7 @@ class FlatDetailsController < ApplicationController
     respond_to do |format|
       
       if @flat_detail.save
-        format.html { redirect_to @flat_detail, notice: 'Flat was successfully created.' }
+        format.html { redirect_to geomaps_path, notice: 'Flat was successfully created.' }
         format.json { render :show, status: :created, location: @flat_detail }
       else
         format.html { render :new }

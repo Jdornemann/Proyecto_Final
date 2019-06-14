@@ -1,5 +1,5 @@
 class FullCalendarsController < ApplicationController
-  
+  before_action :authenticate_owner! 
   def index
     @cleaning_requests = CleaningRequest.all
     respond_to do |format|

@@ -1,4 +1,5 @@
 class GeomapsController < ApplicationController
+  before_action :authenticate_owner! 
   def geolocalization
 
   end

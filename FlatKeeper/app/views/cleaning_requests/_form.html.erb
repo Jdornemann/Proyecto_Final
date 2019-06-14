@@ -1,6 +1,7 @@
+<div class="container background-form">
 <div class="row justify-content-center">
-  <div class="col-8">
-    <div class="container background-form">
+  <div class="col-sm-12 col-md-12">
+    
       <%= form_with(model: cleaning_request, local: true, html: {class: 'form'},class:'form-group') do |form| %>
         <% if cleaning_request.errors.any? %>
           <div id="error_explanation">
@@ -15,7 +16,7 @@
         <h1>Comencemos!</h1>
         <br>
         <h2>Solicita un Kepper</h2>
-        <div class='form-group'>
+        <div class='form-group '>
           <%= form.label :flat_detail, '¿Cúal Propiedad?' %> <!--Which property -->
           <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
         </select>
@@ -33,8 +34,8 @@
         <%= form.label :guest_phone,'Teléfono' %>
         <%= form.text_field :guest_phone, id: :guest_phone,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Teléfono del contacto'  %>
       </div>
-      <div class='row'>
-        <div class="form-group col-4">
+   
+        <div class="form-group">
          <%= form.label :guest_checkin,'Check in' %>
           <div class="input-group date" id="datetimepicker1" data-target-input="nearest" data-date-format="DD/MM/YYYY hh:mm A">
            
@@ -44,7 +45,7 @@
             </div>
           </div>
         </div>
-      </div>
+     
       <script type="text/javascript">
         $(function() {
           $('#guest_checkin').datetimepicker({ format: 'DD/MM/YYYY hh:mm A' } );
@@ -54,8 +55,8 @@
         <%= form.label :guest_comment,'Comentarios' %>
         <%= form.text_area :guest_comment, id: :guest_comment,rows: '3', class: 'form-control',placeholder: 'Las llaves las dejaré en recepción'   %>
       </div>
-      <%= form.submit 'QUIERO UN KEEPER!', :class => 'btn btn-primary' %>
-      <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-primary' %>
+      <%= form.submit 'QUIERO UN KEEPER!', :class => 'btn btn-outline-primary btn-lg btn-block' %>
+      <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-outline-primary btn-lg btn-block' %>
     </div>
   <% end %>
 </div>
