@@ -1,0 +1,7 @@
+
+ $('.modal').modal('hide');
+
+ $('#calendar').fullCalendar('refetchEvents');
+
+ $('.alerts').html("<%= j render 'layouts/alerts', locals:{flash: flash} %>");
+

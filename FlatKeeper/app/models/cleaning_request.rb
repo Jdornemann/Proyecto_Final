@@ -5,6 +5,7 @@ belongs_to :flat_detail
 belongs_to :owner 
 belongs_to :status_cleaning  
 
+
 def start
     guest_checkin
     

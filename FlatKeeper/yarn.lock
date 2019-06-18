@@ -14,6 +14,24 @@ bootstrap-datetimepicker-4.17.37@^4.17.37:
   resolved "https://registry.yarnpkg.com/bootstrap-datetimepicker-4.17.37/-/bootstrap-datetimepicker-4.17.37-4.17.37.tgz#f867f605e82468fd6f0905029ace346a0953e26b"
   integrity sha1-+Gf2BegkaP1vCQUCms40aglT4ms=
 
+bootstrap4-datetimepicker@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/bootstrap4-datetimepicker/-/bootstrap4-datetimepicker-5.2.3.tgz#e7e42839db0531deaa6b53fd63cbd4269e80e09a"
+  integrity sha1-5+QoOdsFMd6qa1P9Y8vUJp6A4Jo=
+  dependencies:
+    bootstrap "4.0.0-alpha.6"
+    jquery "^1.8.3 || ^2.0 || ^3.0"
+    moment "^2.10"
+    moment-timezone "^0.4.0"
+
+bootstrap@4.0.0-alpha.6:
+  version "4.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.6.tgz#4f54dd33ac0deac3b28407bc2df7ec608869c9c8"
+  integrity sha1-T1TdM6wN6sOyhAe8LffsYIhpycg=
+  dependencies:
+    jquery ">=1.9.1"
+    tether "^1.4.0"
+
 bootstrap@^4.0.0-alpha.6:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
@@ -44,12 +62,19 @@ fullcalendar@^3.10.0:
   resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.10.0.tgz#cc5e87d518fd6550e142816a31dd191664847919"
   integrity sha512-0OtsHhmdYhtFmQwXzyo8VqHzYgamg+zVOoytv5N13gI+iF6CGjevpCi/yBaQs0O4wY3OAp8I688IxdNYe0iAvw==
 
-jquery@>=1.7, jquery@^3.4.1:
+jquery@>=1.7, jquery@>=1.9.1, "jquery@^1.8.3 || ^2.0 || ^3.0", jquery@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
 
-moment@^2.24.0:
+moment-timezone@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.4.1.tgz#81f598c3ad5e22cdad796b67ecd8d88d0f5baa06"
+  integrity sha1-gfWYw61eIs2teWtn7NjYjQ9bqgY=
+  dependencies:
+    moment ">= 2.6.0"
+
+"moment@>= 2.6.0", moment@^2.10, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
@@ -58,6 +83,11 @@ popper.js@^1.15.0:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
+
+tether@^1.4.0:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.6.tgz#30c538eebc8ab72a7ac0840843efdd4542d57e5f"
+  integrity sha512-TyWPw9O0ExqH9/ZBnQ0P1/mNI6LX16YPx5XvixC/ZvAqMkhGeXmKTTsMbSBn3ViOrPuQi/Uef11bVp3sd5UcQQ==
 
 underscore@^1.9.1:
   version "1.9.1"

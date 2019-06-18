@@ -1,7 +1,6 @@
 <div class="container background-form">
-<div class="row justify-content-center">
-  <div class="col-sm-12 col-md-12">
-    
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12">
       <%= form_with(model: cleaning_request, local: true, html: {class: 'form'},class:'form-group') do |form| %>
         <% if cleaning_request.errors.any? %>
           <div id="error_explanation">
@@ -16,49 +15,66 @@
         <h1>Comencemos!</h1>
         <br>
         <h2>Solicita un Kepper</h2>
-        <div class='form-group '>
-          <%= form.label :flat_detail, '¿Cúal Propiedad?' %> <!--Which property -->
-          <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
-        </select>
-      </div>
-      <div class='form-group'>
-        <%= form.label :status_cleaning,'Estado actual de tu Propiedad' %> <!--Current Status-->
-        <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
+        <div class='row'>
+          <div class='form-group col-md-6 col-sm-12'>
+            <%= form.label :flat_detail, '¿Cúal Propiedad?' %> <!--Which property -->
+            <%=form.select :flat_detail_id, options_for_select(@flat_detail), {:selected => cleaning_request.flat_detail_id},{required: 'true', autofocus: 'true', class: 'form-control'} %>
+          </select>
+        </div>
+        <div class='form-group col-md-6 col-sm-12' >
+          <%= form.label :status_cleaning,'Estado actual de tu Propiedad' %> <!--Current Status-->
+          <%=form.select :status_cleaning_id, options_for_select(@status_cleaning), {:selected => cleaning_request.status_cleaning_id}, {required: 'true', autofocus: 'true', class: 'form-control'}  %>
+        </div>
       </div>
       <h2>Información adicional del huesped</h2>
-      <div class="form-group">
-        <%= form.label :guest_name,'Nombre' %>
-        <%= form.text_field :guest_name, id: :guest_name,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Nombre de huesped'  %>
-      </div>
-      <div class="form-group">
-        <%= form.label :guest_phone,'Teléfono' %>
-        <%= form.text_field :guest_phone, id: :guest_phone,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Teléfono del contacto'  %>
-      </div>
-   
-        <div class="form-group">
-         <%= form.label :guest_checkin,'Check in' %>
-          <div class="input-group date" id="datetimepicker1" data-target-input="nearest" data-date-format="DD/MM/YYYY hh:mm A">
-           
-            <%= form.text_field :guest_checkin, id: :guest_checkin,required: 'true', autofocus: 'true', class: 'form-control datetimepicker-input'  %>
-            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-            </div>
+      <div class='row'>
+        <div class="form-group col-md-4 col-sm-12">
+          <%= form.label :guest_name,'Nombre' %>
+          <%= form.text_field :guest_name, id: :guest_name,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Nombre de huesped'  %>
+        </div>
+        <div class="form-group col-md-4 col-sm-12">
+          <%= form.label :guest_phone,'Teléfono' %>
+          <%= form.text_field :guest_phone, id: :guest_phone,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'Teléfono del contacto'  %>
+        </div>
+        <div class="form-group col-md-4 col-sm-12">
+          <%= form.label :guest_checkin,'Check in' %>
+          <div class='input-group date' id='datetimepicker1'>
+            <%= form.text_field :guest_checkin, id: :guest_checkin,required: 'true', autofocus: 'true', class: 'form-control',placeholder: 'DD/MM/YYYY hh:mm A'  %>
+            <span class="input-group-addon"> <span class="fa fa-calendar open-datetimepicker"></span></span>
           </div>
         </div>
-     
-      <script type="text/javascript">
-        $(function() {
-          $('#guest_checkin').datetimepicker({ format: 'DD/MM/YYYY hh:mm A' } );
-        });
-      </script>
-      <div class="form-group">
+      </div>
+       <div class='row'>
+      <div class="form-group col-md-12 col-sm-12">
         <%= form.label :guest_comment,'Comentarios' %>
         <%= form.text_area :guest_comment, id: :guest_comment,rows: '3', class: 'form-control',placeholder: 'Las llaves las dejaré en recepción'   %>
       </div>
-      <%= form.submit 'QUIERO UN KEEPER!', :class => 'btn btn-outline-primary btn-lg btn-block' %>
-      <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-outline-primary btn-lg btn-block' %>
     </div>
-  <% end %>
+    </div>
+   
+    <%= form.submit 'QUIERO UN KEEPER!', :class => 'btn btn-outline-primary btn-lg btn-block' %>
+    <%= link_to 'Back', cleaning_requests_path,:class => 'btn btn-outline-primary btn-lg btn-block' %>
+  </div>
+<% end %>
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('#guest_checkin').datetimepicker(
+      { format: 'DD/MM/YYYY hh:mm A',
+      widgetPositioning:{horizontal:'auto',vertical: 'bottom' },
+      icons: {
+        time: 'fa fa-clock-o',
+        date: 'fa fa-calendar',
+        up: 'fa fa-chevron-up',
+        down: 'fa fa-chevron-down',
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-calendar-check-o',
+        clear: 'fa fa-trash-o',
+        close: 'fa fa-close'
+        }
+      } );
+  });
+</script>

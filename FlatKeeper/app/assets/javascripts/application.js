@@ -11,13 +11,13 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery
-//= require bootstrap/dist/js/bootstrap.min
+//= require tether/dist/js/tether
 //= require datatables.net/js/jquery.dataTables
-//= require datatables.net-bs4/js/dataTables.bootstrap4
 //= require moment/min/moment.min
+//= require moment-timezone/moment-timezone
 //= require fullcalendar/dist/fullcalendar
 //= require tempusdominus-bootstrap-4.js
-//= require bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min
+//= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
 //= require underscore/underscore
 //= require gmaps/google
 //= require rails-ujs

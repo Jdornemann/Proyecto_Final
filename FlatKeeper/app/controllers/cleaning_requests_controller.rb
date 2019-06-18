@@ -7,7 +7,6 @@ class CleaningRequestsController < ApplicationController
   def index
     @cleaning_requests = CleaningRequest.all
    
-   
   end
 
   # GET /cleaning_requests/1
@@ -54,12 +53,16 @@ class CleaningRequestsController < ApplicationController
     respond_to do |format|
       #b.update!(house_keeper_id: 1) to asign the keeper to the request
       #b.update!(coordinator_id: 1)
+     
       if @cleaning_request.update(cleaning_request_params)
-        format.html { redirect_to @cleaning_request, notice: 'Cleaning request was successfully updated.' }
+        flash.now[:notice] = "Cleaning request for guest: #{@cleaning_request.guest_name} was successfully updated."
+        format.html { redirect_to full_calendars_path }
         format.json { render :show, status: :ok, location: @cleaning_request }
+        format.js 
       else
         format.html { render :edit }
         format.json { render json: @cleaning_request.errors, status: :unprocessable_entity }
+        format.js 
       end
     end
   end
