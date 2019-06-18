@@ -6,7 +6,8 @@ class FullCalendarsController < ApplicationController
     respond_to do |format|
     format.html 
     format.json { render json: @cleaning_requests.to_json(methods: [:id,:title,:start ,:editable], except:[:created_at,:updated_at,:id,:flat_detail_id,:house_keeper_id,:owner_id,:status_cleaning_id,:coordinator_id,:guest_phone,:guest_comment,:guest_name,:guest_checkin]) }
-    end
+    format.js
+  end
   end
 
   def show 
