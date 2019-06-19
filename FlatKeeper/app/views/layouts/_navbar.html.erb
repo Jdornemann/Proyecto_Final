@@ -1,15 +1,21 @@
 <div class="row"> 
     <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style=" background-color: #6b5b95 !important; " >
+      <nav class="navbar navbar-expand-lg navbar-dark stroke fixed-top bg-faded" style=" background-color: #6b5b95 !important; " >
+       
+     <%= link_to image_tag("Logo2.png", alt: "logo",class:'img-thumbnail'), root_path, class: 'navbar-brand' %>
+     <a class="navbar-brand" href="<%= root_path %>"> 
+     <small>Vacation Rental</small>
+     <small>Cleaning&Administration</small>
+     <small>Services</small>
+      </a>
       
-        <a class="navbar-brand" href="<%= root_path %>">FlatKeeper <small>Vacation Rental Cleaning Service</small> </a>
-    
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+     
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto ">
                 <li class="nav-item active">
                   <a class="nav-link" href="<%= cleaning_requests_path%>">Mis solicitudes <span class="sr-only">(current)</span></a>
                 </li>

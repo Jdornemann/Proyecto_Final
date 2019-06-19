@@ -18,7 +18,6 @@
     margin: 2vh;
     bottom: -13vh;
     left: -1vh;
-   //@at-root position: absolute;
     float:right;
     vertical-align:bottom;
     position: absolute;
@@ -43,7 +42,6 @@
     width: 23vh;
     background-image: image-url("avatars/CleaningService5.png");
     background-size: cover;
-   // opacity: 0.6;
   
 }
 .img-avatar-prop{
@@ -52,7 +50,6 @@
     width: 23vh;
     background-image: image-url("avatars/myProperties3.png");
     background-size: cover;
-   // opacity: 0.6;
   
 }
 .img-avatar-maps{
@@ -61,7 +58,6 @@
     width: 23vh;
     background-image: image-url("avatars/location-blue.png");
     background-size: cover;
-    //opacity: 0.6;
   
 }
 .img-avatar-cal{
@@ -70,7 +66,6 @@
     width: 23vh;
     background-image: image-url("avatars/calendario2.jpg");
     background-size: cover;
-   //@debug opacity: 0.6;
   
 }
 .img-avatar-pay{
@@ -79,7 +74,6 @@
     width: 23vh;
     background-image: image-url("avatars/payment3.png");
     background-size: cover;
-   //@debug opacity: 0.6;
   
 }
 
@@ -87,9 +81,8 @@
 .link-text-avatar  {
     margin-top: 8vh;
     color: #6b5b95;
-  // background-color: #6b5b95;
     border-radius: 10%;
-   padding: 1%;
-   vertical-align:middle;
-   text-align: center;
+    padding: 1%;
+    vertical-align:middle;
+    text-align: center;
 }
